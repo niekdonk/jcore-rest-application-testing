@@ -9,5 +9,4 @@ public class Supermarket {
     private String address;
     private String city;
 
-
 }
