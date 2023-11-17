@@ -12,9 +12,7 @@ public class SupermarketController {
     @GetMapping("/supermarket/{id}")
     public Supermarket getSupermarket() {
         //todo get supermarket from database
-
-
-        return supermarket;
+        return null;
     }
 
     @PostMapping("/supermarket")
