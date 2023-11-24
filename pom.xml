@@ -11,12 +11,8 @@
 	<groupId>nl.jcore</groupId>
 	<artifactId>demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
 	<name>Testing REST Application</name>
 	<description>Demo project for Test a Spring Boot REST application</description>
-	<modules>
-		<module>untitled</module>
-	</modules>
 	<properties>
 		<java.version>21</java.version>
 	</properties>
