@@ -32,6 +32,12 @@ jobs:
 
     needs: build
 
+    services:
+      testcontainers:
+        image: testcontainers/ryuk:0.6.1
+        ports:
+          - 8080:8080
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -42,5 +48,5 @@ jobs:
           distribution: 'adopt'
           java-version: '21'
 
-      - name: Run tests with Maven
+      - name: Run tests with Maven and Docker
         run: mvn test
