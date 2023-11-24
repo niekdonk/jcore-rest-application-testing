@@ -49,4 +49,4 @@ jobs:
           java-version: '21'
 
       - name: Run tests with Maven and Docker
-        run: mvn test
+        run: mvn test --enable-preview
