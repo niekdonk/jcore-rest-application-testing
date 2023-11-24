@@ -34,7 +34,7 @@ jobs:
 
     services:
       testcontainers:
-        image: testcontainers/ryuk:0.6.1
+        image: testcontainers/ryuk:0.5.1
         ports:
           - 8080:8080
 
