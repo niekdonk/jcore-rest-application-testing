@@ -8,14 +8,14 @@ import org.springframework.boot.jackson.JsonComponent;
 
 import java.io.IOException;
 
-import static java.lang.StringTemplate.STR;
-
 @JsonComponent
 public class AddressSerializer extends JsonSerializer<Address> {
 
     @Override
     public void serialize(Address address, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {
-        String addressString = STR."\{address.getStreet()} \{address.getHousenumber()}, \{address.getZipcode()} \{address.getCity()}";
+        String addressString = String.format("%s %s, %s %s",
+                address.getStreet(), address.getHousenumber(), address.getZipcode(), address.getCity());
         jsonGenerator.writeString(addressString);
     }
+
 }
