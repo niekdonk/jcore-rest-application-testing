@@ -1,24 +1,28 @@
 package nl.jcore.demo.controller;
 
 import nl.jcore.demo.model.Supermarket;
+import nl.jcore.demo.service.SupermarketService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class SupermarketController {
+    private SupermarketService supermarketService;
 
-
+    @Autowired
+    public SupermarketController(SupermarketService supermarketService) {
+        this.supermarketService = supermarketService;
+    }
 
     @GetMapping("/supermarket/{id}")
-    public Supermarket getSupermarket() {
-        //todo get supermarket from database
-        return null;
+    public Supermarket getSupermarket(@PathVariable Long id) {
+        return supermarketService.getSupermarket(id);
     }
 
     @PostMapping("/supermarket")
     public Supermarket postSupermarket(@RequestBody Supermarket supermarket) {
-        //TODO save supermarket to database
-        return supermarket;
+        return supermarketService.persistSupermarket(supermarket);
     }
 
     @DeleteMapping("/supermarket")
