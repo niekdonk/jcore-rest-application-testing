@@ -7,15 +7,16 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "SUPERMARKET")
+@Table(name = "supermarket")
 public class SupermarketEntity {
+
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique = true)
     private String name;
 
-    @Embedded
-    private AddressEntity address;
+    private String address;
 
 }

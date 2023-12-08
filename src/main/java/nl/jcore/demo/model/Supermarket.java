@@ -7,6 +7,6 @@ public class Supermarket {
 
     private Long id;
     private String name;
-    private Address address;
+    private String address;
 
 }

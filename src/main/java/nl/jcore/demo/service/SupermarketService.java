@@ -15,7 +15,7 @@ public class SupermarketService {
     private final SupermarketRepository supermarketRepository;
 
     @Autowired
-    private SupermarketService(SupermarketMapper supermarketMapper, SupermarketRepository supermarketRepository) {
+    SupermarketService(SupermarketMapper supermarketMapper, SupermarketRepository supermarketRepository) {
         this.supermarketMapper = supermarketMapper;
         this.supermarketRepository = supermarketRepository;
     }
