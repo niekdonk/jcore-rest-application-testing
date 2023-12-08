@@ -1,1 +1,1 @@
-INSERT INTO SUPERMARKET (name, address) VALUES ('supername', 'super epic address')
+INSERT INTO SUPERMARKET (name, address) VALUES ('supername', 'address')
