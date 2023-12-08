@@ -15,7 +15,8 @@ public class SupermarketEntity {
 
     private String name;
 
-    @Embedded
-    private AddressEntity address;
+    private String address;
+
+    private Double wozWaarde;
 
 }
