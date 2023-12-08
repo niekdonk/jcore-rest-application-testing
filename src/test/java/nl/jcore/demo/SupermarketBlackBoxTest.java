@@ -22,11 +22,11 @@ public class SupermarketBlackBoxTest {
 	@Test
 	@Sql("/testdata.sql")
 	void getSupermarket() throws Exception {
-
 		//get data through api
 		final var supermarket = getAuthenticatedRestTemplate()
 				.getForObject("http://localhost:" + port + "/supermarket/1",
 				String.class);
+
 
 		assertEquals("supername", JsonPath.parse(supermarket).read("$.name"));
 		assertEquals(1, JsonPath.parse(supermarket).read("$.id", Long.class));

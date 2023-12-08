@@ -16,7 +16,7 @@ public class SupermarketEntity {
     private String name;
 
     private String address;
-
+    @Column(name = "wozwaarde")
     private Double wozWaarde;
 
 }
