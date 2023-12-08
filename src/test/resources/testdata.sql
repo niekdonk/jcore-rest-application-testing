@@ -1,0 +1,1 @@
+INSERT INTO SUPERMARKET (name, address, wozwaarde) VALUES ('supername', 'address', 5.5)

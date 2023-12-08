@@ -10,13 +10,13 @@ import lombok.Setter;
 @Table(name = "SUPERMARKET")
 public class SupermarketEntity {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
 
     private String address;
-
+    @Column(name = "wozwaarde")
     private Double wozWaarde;
 
 }
