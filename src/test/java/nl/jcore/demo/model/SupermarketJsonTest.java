@@ -8,6 +8,8 @@ import org.springframework.boot.test.json.JsonContent;
 
 import java.io.IOException;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 @JsonTest
 public class SupermarketJsonTest {
 
@@ -27,6 +29,9 @@ public class SupermarketJsonTest {
         supermarket.setAddress(address);
 
         JsonContent<Supermarket> result = jsonTester.write(supermarket);
-        System.out.println(result);
+
+        assertThat(result).extractingJsonPathNumberValue("$.id").isEqualTo(5);
+        assertThat(result).extractingJsonPathStringValue("$.name").isEqualTo("Jumbo");
+        assertThat(result).extractingJsonPathStringValue("$.address").isEqualTo("Tarthorst 1223, 6708 HZ Wageningen");
     }
 }
