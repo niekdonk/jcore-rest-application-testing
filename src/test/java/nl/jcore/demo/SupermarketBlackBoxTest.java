@@ -55,14 +55,3 @@ public class SupermarketBlackBoxTest {
 	}
 
 }
-
-
-//spring-boot-starter-json
-
-//hoe doe je een black box test
-//waarom doe je een blackbox test
-//wat is de kracht van een black box test
-
-
-//niet nodig in blackbox om de inhoud te testen als je bijvoorbeeld jsontests hebt die al testen of het goed geserializeerd word.
-//en unit test die afvangen dat je allen maar valide objecten kan maken.
