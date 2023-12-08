@@ -16,7 +16,7 @@ public class SupermarketSerializer extends JsonSerializer<Supermarket> {
         jsonGenerator.writeStartObject();
         jsonGenerator.writeNumberField("id", supermarket.getId());
         jsonGenerator.writeStringField("name", supermarket.getName());
-        jsonGenerator.writeObjectField("address", supermarket.getAddress());
+        jsonGenerator.writeStringField("address", supermarket.getAddress());
         jsonGenerator.writeStringField(
                 "wozWaarde",
                 "€" + supermarket.getWozWaarde());
