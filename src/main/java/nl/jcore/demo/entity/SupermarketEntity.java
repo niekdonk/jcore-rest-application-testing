@@ -18,4 +18,6 @@ public class SupermarketEntity {
     @Embedded
     private AddressEntity address;
 
+    private Double wozWaarde;
+
 }

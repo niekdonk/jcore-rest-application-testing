@@ -27,11 +27,12 @@ public class SupermarketJsonTest {
         supermarket.setId(5L);
         supermarket.setName("Jumbo");
         supermarket.setAddress(address);
+        supermarket.setWozWaarde(331000.95);
 
         JsonContent<Supermarket> result = jsonTester.write(supermarket);
 
         assertThat(result).extractingJsonPathNumberValue("$.id").isEqualTo(5);
         assertThat(result).extractingJsonPathStringValue("$.name").isEqualTo("Jumbo");
-        assertThat(result).extractingJsonPathStringValue("$.address").isEqualTo("Tarthorst 1223, 6708 HZ Wageningen");
+        assertThat(result).extractingJsonPathStringValue("$.wozWaarde").isEqualTo("€331000.95");
     }
 }
