@@ -9,7 +9,6 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.test.context.jdbc.Sql;
 
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.when;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -41,19 +40,19 @@ public class SupermarketBlackBoxTest {
 	@Test
 	@Sql("/testdata.sql")
 	void getSupermarketRestAssured() throws Exception {
-		given()
-				.auth().preemptive().basic("user", "password")
+		getAuthorizedResassuredStart()
 		.when()
 				.get("http://localhost:" + port + "/supermarket/1")
 		.then()
 				.statusCode(200)
 				.body("id", equalTo(1))
 				.body("name", equalTo("supername"));
-
-
-
 	}
 
+	private io.restassured.specification.RequestSpecification getAuthorizedResassuredStart(){
+		return given()
+				.auth().preemptive().basic("user", "password");
+	}
 
 }
 
